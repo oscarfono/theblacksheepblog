@@ -54,12 +54,13 @@
   footer {
     position: relative;
     width: 100vw;
+    width: 100dvw;
     min-height: 30em;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: no-repeat url('mask-footer.svg');
+    background:  url('mask-footer.svg');
     padding: 2em;
     z-index: 5;
   }
