@@ -1,0 +1,90 @@
+@import '@fontsource/dancing-script';
+@import '@fontsource/ibm-plex-mono';
+@import '@fontsource/merriweather';
+@import '@fontsource/raleway';
+
+:root {
+  /* font type */
+  --sans: 'Raleway', sans-serif;
+  --serif: 'Merriweather', serif;
+  --mono: 'IBM Plex Mono', monospace;
+  --cursive: 'Dancing Script', cursive;
+
+  /* font size */
+  --fs-xxl: clamp(3.5rem, 5vw + 2rem, 6.5rem);
+  --fs-xl: clamp(2rem, 4vw + 1.5rem, 4.5rem);
+  --fs-l: clamp(1.5rem, 2vw + 1.2rem, 2rem);
+  --fs-m: 1rem;
+  --fs-sm: 0.8rem;
+
+  /* colour vars */
+  --dark: #999;
+  --darker: #444;
+  --darkest: #333;
+  --mid: #666;
+  --light: #bbb;
+  --lighter: #ccc;
+  --lightest: #ddd;
+  --accent: #ffb728;
+  --error: #ff6969;
+  --golden: #bda26b;
+  --highlight: #96bf33;
+  --neon: #f92672;
+  --passion: #424254;
+  --pop: #00b7ff;
+  --soften: rgba(64, 84, 94, 1);
+
+  /* misc vars */
+  --make-metal: conic-gradient(
+    rgba(44, 68, 68, 0.7),
+    rgba(51, 51, 51, 0.9),
+    rgba(68, 68, 68, 0.9),
+    rgba(51, 51, 51, 0.9),
+    rgba(68, 68, 68, 0.9),
+    rgba(44, 68, 68, 0.7),
+    rgba(51, 51, 51, 0.9),
+    rgba(68, 68, 68, 0.9),
+    rgba(51, 51, 51, 0.9),
+    rgba(68, 68, 68, 0.9)
+  );
+  --std-border-radius: 0.4em;
+  --std-box-shadow: 0.3em 0.3em 0.3em rgba(0, 0, 0, 0.3);
+  --rad-box-shadow: 0 0.0125em 0.0125em black, 0 0.025em 0.025em var(--neon),
+    0 0.03em 0.025em var(--accent);
+  --inverse-box-shadow: -0.2em -0.2em 0.2em rgba(221, 221, 221, 0.1);
+  --std-drop-shadow: drop-shadow(0.1rem 0.1rem 0.075rem rgba(0, 0, 0, 0.3));
+  --inverse-drop-shadow: drop-shadow(0.05rem 0.05rem 0.05rem rgba(153, 153, 153, 0.2));
+  --std-text-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.4);
+  --rad-text-shadow: 0 0.0125em 0.0125em black, 0 0.025em 0.025em var(--neon),
+    0 0.03em 0.025em var(--accent);
+  --emboss-text-shadow: -0.0125em -0.0333em 0.025em rgba(245, 245, 245, 0.8),
+    0.0555em 0.0555em 0.0333em rgba(0, 0, 0, 0.7);
+
+  --std-fade-in: fade-in 1s;
+  --std-fade-out: fade-out 1s;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--darkest);
+  background-image: url('$lib/images/tile.svg');
+  color: var(--lightest);
+  font-family: var(--sans);
+  font-size: 16px;
+  font-size: var(--fs-m);
+  line-height: 1.6em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: color 0.5s, background-color 0.5s;
+}

@@ -1,0 +1,152 @@
+@import '$lib/styles/base.css';
+
+a,
+a:visited {
+  color: var(--dark);
+  text-decoration: none;
+  text-shadow: var(--std-text-shadow);
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+h1,
+h2,
+h3 {
+  text-shadow: var(--std-text-shadow);
+}
+
+h1 {
+  font-family: var(--serif);
+  font-size: var(--fs-xl);
+  text-align: center;
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: var(--fs-l);
+}
+
+h3 {
+  font-size: var(--fs-l);
+}
+
+.title {
+  margin-bottom: 0.333em;
+  font-family: var(--cursive);
+  font-size: var(--fs-xxl);
+  color: var(--lightest);
+  text-shadow: var(--std-text-shadow), var(--rad-text-shadow);
+  text-align: center;
+  z-index: 7;
+}
+
+hr {
+  border: 0;
+  height: .5em;
+  background: var(--dark);
+  background-image: linear-gradient(to right, var(--dark), var(--darker), var(--dark));
+}
+
+img,
+object,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: var(--std-border-radius);
+  background-color: transparent;
+}
+
+button,
+[role='button'],
+input[type='submit'],
+input[type='reset'],
+input[type='button'],
+label[type='button'] {
+  border: 1px solid transparent;
+  border-radius: var(--std-border-radius);
+  background-color: var(--accent);
+  box-shadow: var(--std-box-shadow);
+  font-size: 1rem;
+  color: var(--darkest);
+  padding: 0.7rem 0.9rem;
+  margin: 0.5rem 0;
+}
+
+button[disabled],
+[role='button'][aria-disabled='true'],
+input[type='submit'][disabled],
+input[type='reset'][disabled],
+input[type='button'][disabled],
+input[type='checkbox'][disabled],
+input[type='radio'][disabled],
+select[disabled] {
+  cursor: not-allowed;
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled,
+button[disabled] {
+  cursor: not-allowed;
+  background-color: var(--darkest);
+  color: var(--dark);
+}
+
+button:enabled:hover,
+[role='button']:not([aria-disabled='true']):hover,
+input[type='submit']:enabled:hover,
+input[type='reset']:enabled:hover,
+input[type='button']:enabled:hover,
+label[type='button']:hover {
+  border: 1px solid var(--accent);
+  box-shadow: none;
+  filter: brightness(93.333%);
+  cursor: pointer;
+  text-shadow: 0.05rem 0.05rem var(--lightest);
+}
+
+button:focus-visible:where(:enabled, [role='button']:not([aria-disabled='true'])),
+input:enabled:focus-visible:where([type='submit'], [type='reset'], [type='button']) {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+form p {
+  text-align: center;
+}
+
+textarea,
+select,
+input {
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--lightest);
+  background-color: var(--darkest);
+  border: 1px solid $light;
+  border-radius: var(--std-border-radius);
+  box-shadow: none;
+  width: 100%;
+  display: inline-block;
+}
+
+label {
+  display: block;
+}
+
+textarea {
+  height: 200px;
+}
+
+textarea:not([cols]) {
+  width: 100%;
+}
+
+.text-column {
+  padding: 1em;
+}
