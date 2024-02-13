@@ -13,7 +13,7 @@ tags:
 - "svelte"
 
 image: 'tbsb-teaser.jpg'
-alt: 'The Black Sheep Blog teaser'
+alt: ''
 ---
 
 Check out my personal blog

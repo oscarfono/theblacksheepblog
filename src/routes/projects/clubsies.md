@@ -11,7 +11,7 @@ categories:
 - "marketing"
 - "frontend"
 
-image: 'clubsies-teaser.jpg'
+image: ''
 alt: 'Clubsies teaser'
 ---
 

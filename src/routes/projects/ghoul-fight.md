@@ -12,7 +12,7 @@ categories:
 - "marketing"
 - "business card"
 
-image: 'ghoul-teaser.jpg'
+image: ''
 alt: 'Ghoul teaser'
 ---
 

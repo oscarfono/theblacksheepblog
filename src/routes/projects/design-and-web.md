@@ -12,7 +12,7 @@ categories:
 tags:
 - "svelte"
 
-image: 'design-and-web-teaser.jpg'
+image: ''
 alt: 'Design and Web teaser'
 ---
 
