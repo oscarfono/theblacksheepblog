@@ -4,7 +4,7 @@ date: '2023-12-30'
 categories:
 
 - "linux"
-image: 'article-1-hero.webp'
+image: ''
 alt: 'Another article image'
 ---
 

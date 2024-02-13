@@ -4,7 +4,7 @@ date: '2023-12-26'
 categories:
 
 - "music"
-image: 'article-1-hero.webp'
+image: ''
 alt: 'The Black Sheep'
 ---
 
