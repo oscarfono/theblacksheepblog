@@ -4,7 +4,7 @@ date: '2024-02-10'
 categories:
 
 - "music"
-image: 'article-1.hero.webp'
+image: 'article-1-hero.webp'
 alt: 'Another article image'
 ---
 
