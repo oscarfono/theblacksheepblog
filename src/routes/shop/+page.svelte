@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>Shop</title>
+  <title>Shop | The Black Sheep</title>
   <meta name="description" content="The Black Sheep Store" />
 </svelte:head>
 

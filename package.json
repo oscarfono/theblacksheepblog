@@ -37,6 +37,7 @@
   "dependencies": {
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
+    "svelte-bricks": "^0.2.1",
     "svelte-material-icons": "^3.0.5"
   }
 }

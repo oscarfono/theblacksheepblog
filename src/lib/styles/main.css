@@ -33,7 +33,7 @@ h3 {
 }
 
 .title {
-  margin-bottom: 0.333em;
+  margin: 0.666em 0;
   font-family: var(--cursive);
   font-size: var(--fs-xxl);
   color: var(--lightest);
@@ -115,8 +115,12 @@ input:enabled:focus-visible:where([type='submit'], [type='reset'], [type='button
   outline-offset: 1px;
 }
 
-form p {
-  text-align: center;
+form {
+  padding: 1em;
+
+  p {
+    text-align: center;
+  }
 }
 
 textarea,
@@ -145,8 +149,4 @@ textarea {
 
 textarea:not([cols]) {
   width: 100%;
-}
-
-.text-column {
-  padding: 1em;
 }

@@ -63,6 +63,7 @@
     background:  url('mask-footer.svg');
     padding: 2em;
     z-index: 5;
+
   }
 
   .copyright {
@@ -96,6 +97,10 @@
   }
 
   @media (--desktop-device) {
+    footer {
+      margin-top: 20em;
+    }
+
     .author-bio {
       max-width: 60vw;
     }

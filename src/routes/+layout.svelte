@@ -33,8 +33,8 @@
           <li class="" aria-current={$page.url.pathname === '/blog' ? 'page' : undefined}>
             <a href="/blog" on:click={toggleIsPressed}>Blog</a>
           </li>
-          <li class="" aria-current={$page.url.pathname === '/work' ? 'page' : undefined}>
-            <a href="/work" on:click={toggleIsPressed}>Work</a>
+          <li class="" aria-current={$page.url.pathname === '/projects' ? 'page' : undefined}>
+            <a href="/projects" on:click={toggleIsPressed}>Projects</a>
           </li>
           <li class="" aria-current={$page.url.pathname === '/shop' ? 'page' : undefined}>
             <a href="/shop" on:click={toggleIsPressed}>Shop</a>
@@ -56,6 +56,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+
   }
 
   header {
@@ -69,9 +70,12 @@
     z-index: 10;
 
     button {
-      width: 3em;
-      height: 3em;
-      margin-left: 3em;
+      position: absolute;
+      width: 5em;
+      height: 5em;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
       background: var(--darker);
       background-color: var(--darker);
       border: none;
@@ -86,6 +90,7 @@
 
       .logo {
         z-index: 100;
+
       }
     }
   }
@@ -120,12 +125,13 @@
   }
 
   main {
+    position: relative;
     flex: 1;
     display: flex;
     flex-direction: column;
     width: 100vw;
     margin: 0;
-    padding: 4em 0;
+    padding: 3em 0;
     box-sizing: border-box;
   }
 
@@ -134,10 +140,6 @@
     header {
       height: 4em;
 
-      button {
-        width: 5em;
-        height: 5em;
-      }
     }
   }
 

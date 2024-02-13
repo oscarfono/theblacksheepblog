@@ -3,37 +3,45 @@
 </script>
 
 <svelte:head>
-  <title>Blog</title>
+  <title>Recent Posts | The Black Sheep</title>
   <meta name="description" content="Bleatings and musings from The Black Sheep" />
 </svelte:head>
 
-<div class="text-column">
-  <h1 class="title">Bleatings</h1>
-  <ul>
+<h1 class="title">Bleatings</h1>
+<section id="recent-posts">
     {#each data.posts as post}
-      <li>
-	<h2>
-	  <a href={post.path}>
-	    {post.meta.title}
-	  </a>
-	</h2>
-        <img src={post.meta.image}>
-        <span class="publish-date\">Published {post.meta.date}</span>
-      </li>
+      <article>
+        <img alt={post.meta.alt} src={post.meta.image} >
+        <header>
+	  <h2><a href={post.path}>{post.meta.title}</a></h2>
+          <span class="publish-date\">Published {post.meta.date}</span>
+        </header>
+      </article>
     {/each}
-  </ul>
-</div>
+  </section>
 
-<style>
-  ul {
+<style lang="scss">
+  section {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 1em;
-    list-style: none;
+    padding: 0;
+  }
 
-    li {
-      background-color: var(--soften);
-      padding: 1em;
+  article {
+    background-color: var(--soften);
+    padding: 1em;
+    min-width: 25%;
+    min-height: 500px;
+  }
+
+  @media (--desktop-device) {
+
+    section {
+      flex-direction: row;
     }
-}
+  }
+
+
+
 </style>
