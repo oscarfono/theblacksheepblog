@@ -23,6 +23,7 @@
 
 <style>
   section {
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1em;
