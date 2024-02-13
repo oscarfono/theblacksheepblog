@@ -3,14 +3,17 @@
 </script>
 
 <svelte:head>
-  <title>The Black Sheep Blog | {data.title}</title>
-  <meta name="description" content="Thoughts and musings from The Black Sheep himself." />
+  <title>{data.title} | The Black Sheep Blog</title>
+  <meta name="description" content="Projects The Black Sheep has worked with the category '{data.title}'." />
 </svelte:head>
 
 <article>
-	<h1 class="title">{data.title}</h1>
-	<p>Published: {data.date}</p>
-        <svelte:component this={data.content} />
+  <header>
+    <h1 class="title">{data.title}</h1>
+    <p>Published: {data.date}</p>
+  </header>
+  <svelte:component this={data.content} />
+  <footer></footer>
 </article>
 
 <!-- ...Post HTML here -->
@@ -21,7 +24,7 @@
 		<ul>
 			{#each data.categories as category}
 				<li>
-					<a href="/blog/category/{category}">
+				  <a href="/projects/category/{category}">
 						{category}
 					</a>
 				</li>
