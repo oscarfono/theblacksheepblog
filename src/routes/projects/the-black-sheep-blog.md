@@ -12,8 +12,8 @@ categories:
 tags:
 - "svelte"
 
-image: 'tbsb-teaser.jpg'
-alt: ''
+image: ''
+alt: 'The Black Sheep Blog teaser'
 ---
 
 Check out my personal blog
