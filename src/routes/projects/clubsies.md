@@ -11,7 +11,7 @@ categories:
 - "marketing"
 - "frontend"
 
-image: ''
+image: '/content-images/Hero1024.jpg'
 alt: 'Clubsies teaser'
 ---
 

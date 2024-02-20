@@ -11,8 +11,7 @@ categories:
 - "website"
 tags:
 - "svelte"
-
-image: ''
+image: '/content-images/Hero1024.jpg'
 alt: 'Design and Web teaser'
 ---
 

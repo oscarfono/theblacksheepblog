@@ -1,37 +1,34 @@
-export const fetchMarkdownPosts = async () => {
-  const allPostFiles = import.meta.glob('/src/routes/blog/*.md');
-  const iterablePostFiles = Object.entries(allPostFiles);
+// Function to process markdown files given a resolver object
+async function processMarkdownFiles(files) {
+  const iterableFiles = Object.entries(files);
 
-  const allPosts = await Promise.all(
-    iterablePostFiles.map(async ([path, resolver]) => {
+  const allItems = await Promise.all(
+    iterableFiles.map(async ([path, resolver]) => {
       const { metadata } = await resolver();
-      const postPath = path.slice(11, -3);
+      const itemPath = path.slice(11, -3); // Adjust this based on your path structure
 
       return {
-	meta: metadata,
-	path: postPath
+        meta: metadata,
+        path: itemPath,
       };
     })
   );
 
-  return allPosts;
+  return allItems;
+}
+
+// Individual functions to fetch markdown for posts, projects, and products
+export const fetchMarkdownPosts = async () => {
+  const allPostFiles = import.meta.glob('/src/routes/blog/*.md');
+  return await processMarkdownFiles(allPostFiles);
 };
 
 export const fetchMarkdownProjects = async () => {
   const allProjectFiles = import.meta.glob('/src/routes/projects/*.md');
-  const iterableProjectFiles = Object.entries(allProjectFiles);
+  return await processMarkdownFiles(allProjectFiles);
+};
 
-  const allProjects = await Promise.all(
-    iterableProjectFiles.map(async ([path, resolver]) => {
-      const { metadata } = await resolver();
-      const projectPath = path.slice(11, -3);
-
-      return {
-	meta: metadata,
-	path: projectPath
-      };
-    })
-  );
-
-  return allProjects;
+export const fetchMarkdownProducts = async () => {
+  const allProductFiles = import.meta.glob('/src/routes/products/*.md');
+  return await processMarkdownFiles(allProductFiles);
 };

@@ -38,18 +38,38 @@
       <img class="author-img" src="{ profile }" alt="The Black Sheep himself" />
       <p>Greetings! I'm Cooper, the resident Black Sheep.</p>
       <p>I'm the rebel ram amidst a flock of conformity, daring to graze where others fear to tread.</p>
-      <p>I work on and with Free and Open Source Software projects, both for fun and as a means of earning a living. It's a subject I'm hugely passionate about.  The same goes for Music, Jiu Jitsu, and making the world a better place!</p>
+      <p>I work on and with Free and Open Source Software projects, both for fun and as a means of earning a living. It's a subject I'm hugely passionate about.  The same goes for Music, Muay Thai, Jiu Jitsu, and making the world a better place!</p>
       <p>If ewe'd like to work together on any of those things, or need some design or web shit done, let's be <a href="/contact">connecting</a>.</p>
-      <p>Otherwise, feel free to poke around here where I share my thoughts and musings, as well as showcase things I've created or worked on.  If you enjoy any of it and would like to show some support for what I do, I'd be grateful if you would consider <a href="https://ko-fi.com/theblacksheep">shouting me a coffee</a> or perhaps <a href="/store">buying something from my store</a>.</p>
+      <p>Otherwise, feel free to poke around here where I share my thoughts and musings, as well as showcase things I've created or worked on.  If ewe enjoy any of it and would like to show some support for what I do, I'd be grateful if ewe would consider <a href="https://ko-fi.com/theblacksheep">shouting me a coffee</a> or perhaps <a href="/store">buying something from my store</a>.</p>
     </section>
   {/if}
 
 <hr />
-<span class="copyright">&copy; 2023 Cooper Oscarfono</span>
+<div class="copyright">
+  &copy; 2023
+  &nbsp;
+  <span>C</span>
+  <span>o</span>
+  <span>o</span>
+  <span>p</span>
+  <span>e</span>
+  <span>r</span>
+  &nbsp;
+  <span>O</span>
+  <span>s</span>
+  <span>c</span>
+  <span>a</span>
+  <span>r</span>
+  <span>f</span>
+  <span>o</span>
+  <span>n</span>
+  <span>o</span>
+</div>
+
 <SocialLinks />
 </footer>
 
-<style>
+<style lang="scss">
 
   footer {
     position: relative;
@@ -63,13 +83,23 @@
     background:  url('mask-footer.svg');
     padding: 2em;
     z-index: 5;
-
   }
+
 
   .copyright {
     position: absolute;
     bottom: 5em;
     color: var(--darker);
+    cursor: none;
+
+    span {
+      color: var(--darker);
+      cursor: none;
+
+      &:hover {
+        color: var(--golden);
+      }
+    }
   }
 
   .author-bio {
@@ -82,7 +112,6 @@
     max-width: 90vw;
     margin: 24em auto 13em;
     z-index: 10;
-
   }
 
   .author-img {
@@ -98,7 +127,7 @@
 
   @media (--desktop-device) {
     footer {
-      margin-top: 20em;
+      margin-top: 28em;
     }
 
     .author-bio {

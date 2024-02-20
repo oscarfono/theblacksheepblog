@@ -21,7 +21,9 @@
   </section>
 
 <style lang="scss">
+
   section {
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -33,10 +35,20 @@
     padding: 1em;
     min-width: 25%;
     min-height: 500px;
+
+    > header {
+      margin-top: 3.333em;
+      margin-left: -1em;
+      padding: 1em;
+      background-color: var(--darker);
+
+      h2, span {
+        line-height: 1.25
+      }
+    }
   }
 
-  @media (--desktop-device) {
-
+  @media (--tablet-device) and (--desktop-device) {
     section {
       flex-direction: row;
     }

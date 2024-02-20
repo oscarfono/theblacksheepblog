@@ -2,9 +2,12 @@
 title: Reinventing Myself
 date: '2023-12-26'
 categories:
-
-- "music"
-image: ''
+- "Personal Development"
+tags:
+- "self-improvement"
+- "routine"
+- "personal brand"
+image: '/content-images/Hero1024.jpg'
 alt: 'The Black Sheep'
 ---
 

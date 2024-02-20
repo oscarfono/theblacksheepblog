@@ -7,14 +7,14 @@
 </script>
 
 <div class="social-links">
-  <a class="github" href="https://github.com/oscarfono/theblacksheepblog"><Github size ="2em" /></a>
+  <a class="github" href="https://github.com/oscarfono"><Github size ="2em" /></a>
   <a class="youtube" href="https://youtube.com/oscarfono/theblacksheepblog"><Youtube size ="2em" /></a>
   <a class="twitter" href="https://x.com/"><Twitter size ="2em"/></a>
   <a class="instagram" href="https://instagram.com/mindthelion"><Instagram size ="2em"/></a>
   <a class="facebook" href="https://www.facebook.com/profile.php?id=100094420951714"><Facebook size ="2em" /></a>
 </div>
 
-<style>
+<style lang="scss">
  .social-links {
    display: flex;
    flex-direction: row;

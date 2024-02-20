@@ -1,3 +1,7 @@
+<script>
+
+ </script>
+
 <svelte:head>
   <title>Contact | The Black Sheep</title>
   <meta name="description" content="Contact The Black Sheep" />

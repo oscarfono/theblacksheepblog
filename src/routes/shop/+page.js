@@ -7,3 +7,12 @@ export const csr = dev;
 // since there's no dynamic data here, we can prerender
 // it so that it gets served as a static asset in production
 export const prerender = true;
+
+export const load = async ({ fetch }) => {
+  const response = await fetch(`/api/products`);
+  const products = await response.json();
+
+  return {
+    products
+  };
+};

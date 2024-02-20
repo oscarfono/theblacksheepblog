@@ -11,7 +11,7 @@ categories:
 - "marketing"
 - "seo"
 
-image: ''
+image: '/content-images/Hero1024.jpg'
 alt: 'Adsono teaser'
 ---
 

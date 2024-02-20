@@ -11,8 +11,7 @@ categories:
 - "website"
 - "marketing"
 - "business card"
-
-image: ''
+image: '/content-images/Hero1024.jpg'
 alt: 'Ghoul teaser'
 ---
 

@@ -2,9 +2,8 @@
 title: Build a custom blog using Svelte Kit
 date: '2024-02-10'
 categories:
-
 - "music"
-image: ''
+image: '/content-images/Hero1024.jpg'
 alt: 'Another article image'
 ---
 

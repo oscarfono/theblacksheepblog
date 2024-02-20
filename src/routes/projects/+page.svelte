@@ -12,8 +12,10 @@
   {#each data.projects as project}
     <article>
       <header>
-	<h2><a href={project.meta.client_url}>{project.meta.client_name}</a></h2>
-        <h3><a href={project.path}>{project.meta.title}</a></h3>
+	<a href={project.path}>
+          <h2>{project.meta.client_name}</h2>
+          <h3>{project.meta.title}</h3>
+        </a>
       </header>
       <img alt={project.meta.alt} src={project.meta.image} >
     </article>
@@ -21,7 +23,7 @@
 </section>
 
 
-<style>
+<style lang="scss">
   section {
     max-width: 100%;
     display: flex;

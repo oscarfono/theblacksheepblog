@@ -33,7 +33,7 @@ h3 {
 }
 
 .title {
-  margin: 0.666em 0;
+  margin: 0.666em 0 0.333em;
   font-family: var(--cursive);
   font-size: var(--fs-xxl);
   color: var(--lightest);
