@@ -35,8 +35,8 @@
           <li class="" aria-current={$page.url.pathname === '/projects' ? 'page' : undefined}>
             <a href="/projects" on:click={toggleIsPressed}>Projects</a>
           </li>
-          <li class="" aria-current={$page.url.pathname === '/shop' ? 'page' : undefined}>
-            <a href="/shop" on:click={toggleIsPressed}>Shop</a>
+          <li class="" aria-current={$page.url.pathname === '/products' ? 'page' : undefined}>
+            <a href="/products" on:click={toggleIsPressed}>Shop</a>
           </li>
           <li class="" aria-current={$page.url.pathname === '/contact' ? 'page' : undefined}>
             <a href="/contact" on:click={toggleIsPressed}>Contact</a>
