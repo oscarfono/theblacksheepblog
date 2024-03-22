@@ -24,6 +24,7 @@
     z-index: 1;
     background: center no-repeat url('../lib/images/Hero640.jpg');
   }
+
   .title {
     margin: 3em 1.333em;
     font-size: var(--fs-xl);
@@ -35,7 +36,6 @@
     background: center no-repeat url('../lib/images/Hero1024.jpg')
     }
   }
-
 
   @media (--desktop-device) {
     .hero {
@@ -50,7 +50,7 @@
   @media (--4k-device) {
     .hero {
       background: centre no-repeat url('../lib/images/Hero5724.jpg');
-}
+    }
   }
 
 </style>

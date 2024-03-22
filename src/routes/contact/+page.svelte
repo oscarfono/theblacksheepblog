@@ -50,7 +50,7 @@
   }
 
   .contact-form {
-    margin: 0 auto;
+    margin-inline: auto;
 
   }
   @media (--desktop-device) {

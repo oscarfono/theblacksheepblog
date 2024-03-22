@@ -9,16 +9,18 @@
 
 <h1 class="title">Bleatings</h1>
 <section id="recent-posts">
-    {#each data.posts as post}
+  {#each data.posts as post}
+    <a href={post.path}>
       <article>
         <img alt={post.meta.alt} src={post.meta.image} >
         <header>
-	  <h2><a href={post.path}>{post.meta.title}</a></h2>
+	  <h2>{post.meta.title}</h2>
           <span class="publish-date\">Published {post.meta.date}</span>
         </header>
       </article>
-    {/each}
-  </section>
+    </a>
+  {/each}
+</section>
 
 <style lang="scss">
 

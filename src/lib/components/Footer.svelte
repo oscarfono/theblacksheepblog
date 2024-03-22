@@ -39,8 +39,8 @@
       <p>Greetings! I'm Cooper, the resident Black Sheep.</p>
       <p>I'm the rebel ram amidst a flock of conformity, daring to graze where others fear to tread.</p>
       <p>I work on and with Free and Open Source Software projects, both for fun and as a means of earning a living. It's a subject I'm hugely passionate about.  The same goes for Music, Muay Thai, Jiu Jitsu, and making the world a better place!</p>
-      <p>If ewe'd like to work together on any of those things, or need some design or web shit done, let's be <a href="/contact">connecting</a>.</p>
-      <p>Otherwise, feel free to poke around here where I share my thoughts and musings, as well as showcase things I've created or worked on.  If ewe enjoy any of it and would like to show some support for what I do, I'd be grateful if ewe would consider <a href="https://ko-fi.com/theblacksheep">shouting me a coffee</a> or perhaps <a href="/store">buying something from my store</a>.</p>
+      <p>If ewe'd like to work together on any of those things, or need some design or web stuff done, let's be <a href="/contact">connecting</a>.</p>
+      <p>Otherwise, feel free to poke around here where I share my thoughts and musings, as well as showcase things I've created or worked on.  If ewe enjoy any of it, and would like to show some support, consider <a href="https://ko-fi.com/theblacksheep">shouting me a coffee</a> or perhaps <a href="/store">checkout my store</a>.</p>
     </section>
   {/if}
 

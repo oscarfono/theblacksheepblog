@@ -13,7 +13,6 @@
   const toggleIsPressed = () => {
     isPressed = !isPressed;
   };
-
 </script>
 
 <div class="app">
@@ -56,6 +55,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow: hidden;
 
   }
 
@@ -140,7 +140,6 @@
 
     header {
       height: 4em;
-
     }
   }
 
