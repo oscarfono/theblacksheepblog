@@ -29,6 +29,6 @@ export const fetchMarkdownProjects = async () => {
 };
 
 export const fetchMarkdownProducts = async () => {
-  const allProductFiles = import.meta.glob('/src/routes/products/*.md');
+  const allProductFiles = import.meta.glob('/src/routes/shop/*.md');
   return await processMarkdownFiles(allProductFiles);
 };
