@@ -80,7 +80,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background:  url('mask-footer.svg');
+    background:  url('/mask-footer.svg');
     padding: 2em;
     z-index: 5;
   }
