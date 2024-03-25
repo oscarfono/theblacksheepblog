@@ -15,6 +15,7 @@
         <img alt={post.meta.alt} src={post.meta.image} >
         <header>
 	  <h2>{post.meta.title}</h2>
+          <h4 class="article-author"> {post.meta.author}</h4>
           <span class="publish-date\">Published {post.meta.date}</span>
         </header>
       </article>
@@ -32,20 +33,25 @@
     padding: 0;
   }
 
+  a:hover {
+    color: var(--lighter);
+  }
+
   article {
     background-color: var(--soften);
-    padding: 1em;
+    padding: 0;
     min-width: 25%;
     min-height: 500px;
 
     > header {
-      margin-top: 3.333em;
-      margin-left: -1em;
-      padding: 1em;
+      margin-top: -0.5em;
+      padding: 2em;
       background-color: var(--darker);
+      box-shadow: 0 0.333em 0 var(--darkest);
 
       h2, span {
-        line-height: 1.25
+
+        line-height: 1.25;
       }
     }
   }

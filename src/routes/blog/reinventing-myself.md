@@ -1,5 +1,6 @@
 ---
 title: Reinventing Myself
+author: Cooper Oscarfono
 date: '2023-12-26'
 categories:
 - "Personal Development"

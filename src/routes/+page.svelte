@@ -26,7 +26,7 @@
   }
 
   .title {
-    margin: 3em 1.333em;
+    margin: 2.333em 0.5em;
     font-size: var(--fs-xl);
     text-shadow: var(--std-text-shadow), var(--rad-text-shadow), var(--std-text-shadow);
   }

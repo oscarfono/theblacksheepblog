@@ -1,5 +1,6 @@
 ---
 title: Build a custom blog using Svelte Kit
+author: Cooper Oscarfono
 date: '2024-02-10'
 categories:
 - "music"

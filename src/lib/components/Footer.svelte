@@ -73,6 +73,7 @@
 
   footer {
     position: relative;
+    margin-bottom: 0;
     width: 100vw;
     width: 100dvw;
     min-height: 30em;
@@ -80,8 +81,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background:  url('/mask-footer.svg');
-    padding: 2em;
+    background:  no-repeat url('/mask-footer.svg');
+    padding: 0;
     z-index: 5;
   }
 

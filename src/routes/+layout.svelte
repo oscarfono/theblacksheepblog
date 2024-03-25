@@ -1,4 +1,5 @@
 <script>
+  import { onMount, onDestroy } from 'svelte';
   import { page } from '$app/stores';
   import { fade } from 'svelte/transition';
 
@@ -11,8 +12,10 @@
   let isPressed = false;
 
   const toggleIsPressed = () => {
-    isPressed = !isPressed;
+      isPressed = !isPressed;
   };
+
+
 </script>
 
 <div class="app">
@@ -65,7 +68,6 @@
     width: 100vw;
     padding: 1em 0;
     border-bottom: 1px solid var(--dark);
-
     background-color: var(--darker);
     z-index: 10;
 
