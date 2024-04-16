@@ -3,11 +3,7 @@ title: Reinventing Myself
 author: Cooper Oscarfono
 date: '2023-12-26'
 categories:
-- "Personal Development"
-tags:
-- "self-improvement"
-- "routine"
-- "personal brand"
+- "personal development"
 image: '/content-images/Hero1024.jpg'
 alt: 'The Black Sheep'
 ---

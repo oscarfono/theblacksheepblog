@@ -4,7 +4,6 @@ client_url: 'https://ghoulfight.com'
 title: Brand and Website
 date: '2024-02-10'
 categories:
-
 - "design"
 - "brand"
 - "logo"

@@ -4,9 +4,9 @@ client_url: 'https://adsono.live'
 title: Brand and Website
 date: '2024-02-12'
 categories:
-- "Design"
-- "Brand"
-- "Logo"
+- "design"
+- "brand"
+- "logo"
 - "website"
 - "marketing"
 - "seo"

@@ -3,8 +3,8 @@ title: Emacs for the win!
 author: Cooper Oscarfono
 date: '2024-02-10'
 categories:
-
-- "music"
+- "linux"
+- "open source"
 image: '/content-images/Hero1024.jpg'
 alt: 'Another article image'
 ---

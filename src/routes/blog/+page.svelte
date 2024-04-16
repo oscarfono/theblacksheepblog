@@ -15,7 +15,7 @@
         <img alt={post.meta.alt} src={post.meta.image} >
         <header>
 	  <h2>{post.meta.title}</h2>
-          <h4 class="article-author"> {post.meta.author}</h4>
+          <h3 class="article-author">{post.meta.author}</h3>
           <span class="publish-date\">Published {post.meta.date}</span>
         </header>
       </article>
@@ -49,8 +49,11 @@
       background-color: var(--darker);
       box-shadow: 0 0.333em 0 var(--darkest);
 
-      h2, span {
+      h3 {
+        font-size: var(--fs-s);
+      }
 
+      h2, h3, span {
         line-height: 1.25;
       }
     }
@@ -61,7 +64,5 @@
       flex-direction: row;
     }
   }
-
-
 
 </style>

@@ -1,19 +1,27 @@
 <script>
-  import { onMount, onDestroy } from 'svelte';
-  import { page } from '$app/stores';
+
   import { fade } from 'svelte/transition';
 
-  import Logo from '$lib/images/logo.svg';
-  import Footer from '$lib/components/Footer.svelte';
   import '$lib/styles/main.css';
+  import Logo from '$lib/images/logo.svg';
+  import NavMenu from '$lib/components/NavMenu.svelte';
+  import Footer from '$lib/components/Footer.svelte';
 
   export let data;
+  export let links = [
+    { id: 0, name: "home", path: "/"},
+    { id: 1, name: "blog", path: "/blog"},
+    { id: 2, name: "products", path: "/products"},
+    { id: 3, name: "projects", path: "/projects"},
+    { id: 4, name: "contact", path: "/contact"}
+  ]
 
   let isPressed = false;
 
   const toggleIsPressed = () => {
-      isPressed = !isPressed;
+    isPressed = !isPressed;
   };
+
 
 
 </script>
@@ -27,25 +35,7 @@
   {#key data.currentRoute}
   <main in:fade={{ duration: 150, delay: 150 }} out:fade={{ duration: 150 }}>
     <aside class:active={isPressed}>
-      <nav class="menu">
-        <ul>
-          <li class="" aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-            <a href="/" on:click={toggleIsPressed}>Home</a>
-          </li>
-          <li class="" aria-current={$page.url.pathname === '/blog' ? 'page' : undefined}>
-            <a href="/blog" on:click={toggleIsPressed}>Blog</a>
-          </li>
-          <li class="" aria-current={$page.url.pathname === '/projects' ? 'page' : undefined}>
-            <a href="/projects" on:click={toggleIsPressed}>Projects</a>
-          </li>
-          <li class="" aria-current={$page.url.pathname === '/products' ? 'page' : undefined}>
-            <a href="/products" on:click={toggleIsPressed}>Shop</a>
-          </li>
-          <li class="" aria-current={$page.url.pathname === '/contact' ? 'page' : undefined}>
-            <a href="/contact" on:click={toggleIsPressed}>Contact</a>
-          </li>
-        </ul>
-      </nav>
+      <NavMenu {links} {toggleIsPressed} />
     </aside>
     <slot />
   </main>
@@ -59,7 +49,6 @@
     flex-direction: column;
     min-height: 100vh;
     overflow: hidden;
-
   }
 
   header {
@@ -97,6 +86,18 @@
     }
   }
 
+
+  main {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    max-width: 100vw;
+    margin-top: 5em;
+    box-sizing: border-box;
+  }
+
   aside {
     position: fixed;
     top: 0;
@@ -110,38 +111,15 @@
     &.active {
       display: block;
     }
-
-    nav {
-      margin-top: 5em;
-      line-height: 4;
-      text-align: center;
-      text-transform: uppercase;
-      font-size: var(--fs-l);
-
-      ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-    }
-  }
-
-  main {
-    position: relative;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    max-width: 100vw;
-    margin: 0;
-    padding: 3em 0;
-    box-sizing: border-box;
   }
 
   @media (--desktop-device) {
 
     header {
       height: 4em;
+    }
+    main {
+      margin-top: 4em;
     }
   }
 

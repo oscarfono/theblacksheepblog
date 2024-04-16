@@ -23,41 +23,43 @@
 </section>
 
 
+
 <style lang="scss">
+
   section {
     max-width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1em;
     padding: 0;
-
   }
+
+  a:hover {
+    color: var(--lighter);
+  }
+
   article {
     background-color: var(--soften);
-    padding: 1em;
+    padding: 0;
     min-width: 25%;
     min-height: 500px;
 
     > header {
-      margin-top: 3.333em;
-      margin-left: -1em;
-      padding: 1em;
+      margin-top: -0.5em;
+      padding: 2em;
       background-color: var(--darker);
+      box-shadow: 0 0.333em 0 var(--darkest);
 
-      h2, h3 {
-        line-height: 1.25
+      h2 {
+
+        line-height: 1.25;
       }
     }
-
   }
 
-  @media (--desktop-device) {
-
+  @media (--tablet-device) and (--desktop-device) {
     section {
       flex-direction: row;
     }
   }
-
-
-
 </style>
