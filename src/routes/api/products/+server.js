@@ -1,13 +1,15 @@
 // src/routes/api/products/+server.js
-import { fetchMarkdownProducts } from '$lib/utils';
+
 import { json } from '@sveltejs/kit';
 
 export const GET = async () => {
-  const allProducts = await fetchMarkdownProducts();
+  try {
+    const allProducts = await fetch('https://fakestoreapi.com/products?limit=8')
+          .then(res => res.json());
 
-  const sortedProducts = allProducts.sort((a, b) => {
-    return new Date(b.meta.date) - new Date(a.meta.date);
-  });
-
-  return json(sortedProducts);
+    return json(allProducts);
+  } catch (error) {
+    console.error('Error fetching products:', error);
+    return json({ error: 'Failed to fetch products' }, 500);
+  }
 };

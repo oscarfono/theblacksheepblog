@@ -2,6 +2,14 @@
 @import '@fontsource/ibm-plex-mono';
 @import '@fontsource/merriweather';
 @import '@fontsource/raleway';
+@import '@fontsource/redacted-script';
+
+@font-face {
+  font-family: 'Ruritania';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Ruritania'), url('/Ruritania.woff') format('woff');
+}
 
 :root {
   /* font type */
@@ -9,6 +17,8 @@
   --serif: 'Merriweather', serif;
   --mono: 'IBM Plex Mono', monospace;
   --cursive: 'Dancing Script', cursive;
+  --lombardic: 'Ruritania', system-ui;
+  --redacted: 'Redacted Script', system-ui;
 
   /* font size */
   --fs-xxl: clamp(4rem, 6vw + 2.5rem, 7rem);
@@ -50,15 +60,15 @@
   --std-border-radius: 0.4em;
   --std-box-shadow: 0.3em 0.3em 0.3em rgba(0, 0, 0, 0.3);
   --rad-box-shadow: 0 0.0125em 0.0125em black, 0 0.025em 0.025em var(--neon),
-    0 0.03em 0.025em var(--accent);
+                    0 0.03em 0.025em var(--accent);
   --inverse-box-shadow: -0.2em -0.2em 0.2em rgba(221, 221, 221, 0.1);
   --std-drop-shadow: drop-shadow(0.1rem 0.1rem 0.075rem rgba(0, 0, 0, 0.3));
   --inverse-drop-shadow: drop-shadow(0.05rem 0.05rem 0.05rem rgba(153, 153, 153, 0.2));
   --std-text-shadow: 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.4);
   --rad-text-shadow: 0 0.0125em 0.0125em black, 0 0.025em 0.025em var(--neon),
-    0 0.03em 0.025em var(--accent);
+                     0 0.03em 0.025em var(--accent);
   --emboss-text-shadow: -0.0125em -0.0333em 0.025em rgba(245, 245, 245, 0.8),
-    0.0555em 0.0555em 0.0333em rgba(0, 0, 0, 0.7);
+                        0.0555em 0.0555em 0.0333em rgba(0, 0, 0, 0.7);
 
   --std-fade-in: fade-in 1s;
   --std-fade-out: fade-out 1s;

@@ -9,6 +9,6 @@ export async function load({ params }) {
     date,
     categories,
     image,
-    content,
+    content
   };
 }

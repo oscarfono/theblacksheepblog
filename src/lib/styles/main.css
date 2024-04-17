@@ -32,6 +32,19 @@ h3 {
   font-size: var(--fs-l);
 }
 
+p {
+  line-height: 1.9;
+}
+
+.dropcap {
+  font-family: var(--lombardic);
+  font-size: 9em;
+  text-transform: uppercase;
+  float: left;
+  line-height: 1.2;
+  margin-right: 0.1333em;
+}
+
 .title {
   margin: 0.666em 0 0.333em;
   font-family: var(--cursive);
@@ -149,4 +162,8 @@ textarea {
 
 textarea:not([cols]) {
   width: 100%;
+}
+
+.soften {
+  color: var(--dark);
 }

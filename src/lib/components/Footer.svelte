@@ -5,26 +5,26 @@
   import Copyright from '$lib/components/Copyright.svelte';
   import SocialLinks from '$lib/components/SocialLinks.svelte';
 
+
   // Initialize isHome as false by default
   let isHome = false;
 
   // Function to check if the current route is the home page
   const checkIsHome = () => {
+
     // Compare the current location path with the home page path
     isHome = window.location.pathname === '/';
+  };
+
+  // Listen for navigation changes
+  const unlisten = () => {
+    window.removeEventListener('popstate', checkIsHome);
   };
 
   // On component mount, check if it's the home page
   onMount(() => {
     checkIsHome(); // Initial check on mount
-
-    // Listen for navigation changes
-    const unlisten = () => {
-      window.removeEventListener('popstate', checkIsHome);
-    };
-
     window.addEventListener('popstate', checkIsHome);
-
     // Unsubscribe when component is destroyed
     onDestroy(() => {
       unlisten();
@@ -39,14 +39,13 @@
       <p>Greetings! I'm Cooper, the resident Black Sheep.</p>
       <p>The rebel ram amidst a flock of conformity, daring to graze where others fear to tread.</p>
       <p>I work on and with Free and Open Source Software projects; a subject I'm deeply passionate about.  The same goes for Music, Muay Thai, Jiu Jitsu, and making the world a better place!</p>
-      <p>If ewe'd like to work together on any of those things, or need some design or web stuff done, let's be <a href="/contact">connecting</a>.</p>
-      <p>Otherwise, feel free to poke around here where I share my thoughts and musings, as well as showcase things I've created or worked on.  If ewe enjoy any of it, and would like to show some support, consider <a href="https://ko-fi.com/theblacksheep">shouting me a coffee</a> or perhaps <a href="/store">checkout my store</a>.</p>
+      <p>If ewe'd like to work together on any of those things, or need some design or web stuff done, let's be <a href="/contact">connecting</a>.  Otherwise, feel free to poke around here where I share my thoughts and musings, as well as showcase things I've created or worked on.  If ewe enjoy any of it, and would like to show some support, consider <a href="https://ko-fi.com/theblacksheep">shouting me a coffee</a> or perhaps <a href="/store">checkout my store</a>.</p>
     </section>
   {/if}
 
-<svelte:component this={Copyright} />
+<Copyright />
 
-<svelte:component this={SocialLinks} />
+<SocialLinks />
 
 </footer>
 
