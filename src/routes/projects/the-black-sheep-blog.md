@@ -11,7 +11,7 @@ categories:
 - "website"
 tags:
 - "svelte"
-image: '/content-images/Hero1024.jpg'
+image: '/content-images/tbsb-landing.jpg'
 alt: 'The Black Sheep Blog teaser'
 ---
 

@@ -14,7 +14,7 @@
 <style lang="scss">
   .copyright {
     position: absolute;
-    bottom: 5em;
+    bottom: 6.666em;
     color: var(--darker);
     cursor: none;
 

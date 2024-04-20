@@ -5,16 +5,17 @@
 </script>
 
 <svelte:head>
-  <title>Shop | The Black Sheep</title>
-  <meta name="description" content="The Black Sheep Store" />
+  <title>Shop | The Black Sheep Blog</title>
+  <meta name="description" content="Buy products from The Black Sheep Blog online store" />
 </svelte:head>
 
-<h1 class="title">Shop</h1>
-
-<ProductCards {data} />
+<section class="wrapper grid">
+  <h1 class="title">Shop</h1>
+  <ProductCards {data} />
+</section>
 
 <style lang="scss">
-
-  @media (--desktop-device) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
   }
 </style>

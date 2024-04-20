@@ -16,8 +16,6 @@
   <footer></footer>
 </article>
 
-<!-- ...Post HTML here -->
-
 {#if data.categories.length}
 	<aside>
 		<h2>Posted in:</h2>

@@ -3,63 +3,55 @@
 </script>
 
 <svelte:head>
-  <title>Projects | The Black Sheep</title>
-  <meta name="description" content="Bleatings and musings from The Black Sheep" />
+  <title>Projects | The Black Sheep Blog</title>
+  <meta name="description" content="Projects The Black Sheep has worked on" />
 </svelte:head>
 
-<h1 class="title">My little lambs</h1>
-<section>
+<section class="wrapper grid">
+  <h1 class="title">My little lambs</h1>
   {#each data.projects as project}
-    <article>
-      <header>
-	<a href={project.path}>
+    <a href={project.path}>
+      <article>
+        <header>
           <h2>{project.meta.client_name}</h2>
           <h3>{project.meta.title}</h3>
-        </a>
-      </header>
-      <img alt={project.meta.alt} src={project.meta.image} >
-    </article>
+        </header>
+        <img alt={project.meta.alt} src={project.meta.image} />
+      </article>
+    </a>
   {/each}
 </section>
 
-
-
 <style lang="scss">
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
+    gap: 3.333em;
 
-  section {
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    padding: 0;
-  }
+    a:hover {
+      color: var(--lighter);
+    }
 
-  a:hover {
-    color: var(--lighter);
-  }
+    article {
+      position: relative;
+      background-color: var(--soften);
+      padding: 0;
 
-  article {
-    background-color: var(--soften);
-    padding: 0;
-    min-width: 25%;
-    min-height: 500px;
+      > header {
+        margin-top: -0.5em;
+        padding: 2em;
+        background-color: var(--darker);
+        box-shadow: 0 0.333em 0 var(--darkest);
 
-    > header {
-      margin-top: -0.5em;
-      padding: 2em;
-      background-color: var(--darker);
-      box-shadow: 0 0.333em 0 var(--darkest);
-
-      h2 {
-
-        line-height: 1.25;
+        h2 {
+          line-height: 1.25;
+        }
       }
     }
   }
 
   @media (--tablet-device) and (--desktop-device) {
     section {
-      flex-direction: row;
+
     }
   }
 </style>

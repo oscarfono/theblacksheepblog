@@ -1,5 +1,4 @@
 <script>
-  import { createEventDispatcher } from 'svelte';
   import CartPlus from 'svelte-material-icons/CartPlus.svelte';
   import Close from 'svelte-material-icons/Close.svelte';
   import Check from 'svelte-material-icons/Check.svelte';
@@ -7,78 +6,69 @@
 
   export let data;
 
+  const cart = new Map();
+
   if (!data || !data.products) {
     console.error("Data or products property is missing or undefined.");
   }
 
-  const dispatch = createEventDispatcher();
-
-  data.products.forEach(product => {
-    product.clicked = false;
-  });
-
-  function handleBuyClick(product) {
-    dispatch('buy');
-    product.clicked = true;
-    console.log(product.clicked);
-  }
-
-  function handleRemoveClick(product) {
-    dispatch('remove');
-    product.clicked = false;
-  }
+  const toggleAddToCart = (product) => {
+    if (cart.has(product.id)) {
+      cart.delete(product.id);
+    } else {
+      cart.set(product.id, product);
+    }
+  };
 
   // remove this once i'm done with fakestore api
   function truncateTitle(title) {
     return title.length > 10 ? title.slice(0, 10) + '...' : title;
   }
+
 </script>
 
-<section class="catalogue">
-  {#each data.products as product (product.id)}
-    <article>
-      <div class="container">
-        <div class="top"
-             style="background: url({product.image}) no-repeat center center;
-                    -webkit-background-size: 100%;
-                    -moz-background-size: 100%;
-                    -o-background-size: 100%;
-                    background-size: 100%;"
-             role="img" aria-label={product.title}></div>
-        <div class="bottom" class:clicked={product.clicked}>
-          <div class="left">
-            <div class="details">
-              <h1>{truncateTitle(product.title)}</h1>
-              <p>${product.price}</p>
+    {#each data.products as product (product.id)}
+      <article>
+        <div class="container">
+          <div class="top"
+               style="background: url({product.image}) no-repeat center center;
+                      -webkit-background-size: 100%;
+                      -moz-background-size: 100%;
+                      -o-background-size: 100%;
+                      background-size: 100%;"
+               role="img" aria-label={product.title}></div>
+          <div class="bottom" class:clicked={cart.has(product.id)}>
+            <div class="left">
+              <div class="details">
+                <h1>{truncateTitle(product.title)}</h1>
+                <p>${product.price}</p>
+              </div>
+              <button class="buy" on:click={() => toggleAddToCart(product)} aria-label="Add to Cart" tabindex="0">
+                <CartPlus size='3em'/>
+              </button>
             </div>
-            <button class="buy" on:click={() => handleBuyClick(product)} aria-label="Add to Cart" tabindex="0"><CartPlus size='3em'/></button>
-          </div>
-          <div class="right">
-            <div class="done"><Check /></div>
-            <div class="details">
-              <h1>{truncateTitle(product.title)}</h1>
-              <p>Added to your cart</p>
+            <div class="right">
+              <div class="done"><Check size='3em'/></div>
+              <div class="details">
+                <h1>{truncateTitle(product.title)}</h1>
+                <p>Added to your cart</p>
+              </div>
+              <button class="remove" on:click={() => toggleAddToCart(product)} aria-label="Remove from Cart" tabindex="0">
+                <Close size='3em'/>
+              </button>
             </div>
-            <button class="remove" on:click={() => handleRemoveClick(product)} aria-label="Remove from Cart" tabindex="0"><Close /></button>
           </div>
         </div>
-      </div>
-      <div class="inside">
-        <div class="icon"><InformationOutline /></div>
-        <div class="contents">{product.description}</div>
-      </div>
-    </article>
-  {/each}
-</section>
+        <div class="inside">
+          <div class="icon"><InformationOutline size='2em'/></div>
+          <div class="contents">{product.description}</div>
+        </div>
+      </article>
+    {/each}
 
 <style lang="scss">
-  .catalogue {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(333px, 1fr));
-    gap: 1em;
-
-    article {
-      height: 555px;
+     article {
+      height: 30em;
       margin: auto;
       position: relative;
       overflow: hidden;
@@ -94,8 +84,8 @@
       }
 
       .container {
-        width:100%;
-        height:100%;
+        width: 100%;
+        height: 100%;
 
         .top {
           height: 80%;
@@ -147,21 +137,21 @@
             float:left;
 
             .details {
-              padding: 20px;
+              padding: 1.25em;
               float: left;
-              width: calc(70% - 40px);
+              width: calc(70% - 2.5em);
             }
 
             .buy {
-              float:right;
-              width: calc(30% - 2px);
-              height:100%;
-              background: #f1f1f1;
+              float: right;
+              width: calc(30% - 0.125em);
+              height: 100%;
+              background: var(--white);
               transition: background 0.5s;
-              border-left:solid thin rgba(0,0,0,0.1);
+              border-left: solid thin rgba(0,0,0,0.1);
 
               svg {
-                padding:30px;
+                padding: 1.875em;
                 color: #254053;
                 transition: transform 0.5s;
               }
@@ -171,7 +161,7 @@
               }
 
               &:hover svg {
-                transform: translateY(5px);
+                transform: translateY(0.3125em);
                 color:#00394B;
               }
             }
@@ -180,52 +170,51 @@
           .right {
             width: 50%;
             background: var(--highlight);
-            color: white;
-            float:right;
-            height:200%;
+            color: var(--white);
+            float: right;
+            height: 200%;
             overflow: hidden;
 
             .details {
-              padding: 20px;
+              padding: 1.25em;
               float: right;
-              width: calc(70% - 40px);
+              width: calc(70% - 2.5em);
             }
 
             .done {
-              width: calc(30% - 2px);
-              float:left;
+              width: calc(30% - 0.125em);
+              float: left;
               transition: transform 0.5s;
-              border-right:solid thin rgba(255,255,255,0.3);
-              height:50%;
+              border-right: solid thin rgba(255,255,255,0.3);
+              height: 50%;
 
               svg {
-                font-size:30px;
-                padding:30px;
-                color: white;
+                padding: 1.85em;
+                color: var(--white);
               }
             }
 
             .remove {
-              width: calc(30% - 1px);
+              width: calc(30% - 0.0625em);
               clear: both;
-              border-right:solid thin rgba(255,255,255,0.3);
-              height:50%;
-              background: #BC3B59;
+              border-right: solid thin rgba(255,255,255,0.3);
+              height: 50%;
+              color: var(--white);
+              background: var(--error);
               transition: transform 0.5s, background 0.5s;
 
               &:hover {
-                background: #9B2847;
+                background: darken(#ff6969, 30%);
               }
 
               &:hover svg {
-                transform: translateY(5px);
+                transform: translateY(0.3125em);
               }
 
               svg {
                 transition: transform 0.5s;
-                font-size:30px;
-                padding:30px;
-                color: white;
+                padding: 1.85em;
+                color: var(--white);
               }
             }
 
@@ -239,36 +228,37 @@
       }
 
       .inside {
-        z-index:9;
-        background: var(--soften);
-        width:140px;
-        height:140px;
+        z-index: 9;
         position: absolute;
-        top: -70px;
-        right: -70px;
-        border-radius: 0px 0px 200px 200px;
+        top: -4.375em;
+        right: -4.375em;
+        width: 8.75em;;
+        height: 8.75em;;
+        border-radius: 0 0 12.5em 12.5em;
+        background: var(--accent);
+        color: var(--darkest);
         transition: all 0.5s, border-radius 2s, top 1s;
         overflow: hidden;
 
         .icon {
-          position:absolute;
-          right:85px;
-          top:85px;
-          color:white;
+          position: absolute;
+          right: 5.312em;;
+          top: 5.312em;;
+          color: var(--darkest);
           opacity: 1;
         }
 
         &:hover {
-          width:100%;
-          right:0;
-          top:0;
+          width: 100%;
+          right: 0;
+          top: 0;
           border-radius: 0;
-          height:80%;
+          height: 80%;
 
           .icon {
             opacity: 0;
-            right:15px;
-            top:15px;
+            right: 0.9375em;
+            top: 0.9375em;
           }
 
           .contents {
@@ -286,12 +276,6 @@
           transition: opacity 0.2s, transform 0.8s;
         }
       }
-    }
-  }
+     }
 
-  @media (max-width: 768px) {
-    /* .catalogue { */
-    /*   grid-template-columns: 1fr; */
-    /* } */
-  }
 </style>

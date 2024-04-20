@@ -1,6 +1,6 @@
 <script>
   import { fade } from 'svelte/transition';
-  let visible = true;
+  import GreatQuotes from '$lib/components/GreatQuotes.svelte';
 </script>
 
 <svelte:head>
@@ -8,21 +8,15 @@
   <meta name="description" content="Thoughts and musings from The Black Sheep himself, Cooper Oscarfono." />
 </svelte:head>
 
-<section class="hero">
+<div class="hero">
+  <!-- theres conditional logic on +layout.svelte for bg image on home page.  This div pushs the footer down so the image can be seen -->
   <h1 class="title" transition:fade>The Black Sheep Blog</h1>
-</section>
+  <GreatQuotes />
+</div>
 
 <style lang="scss">
-  .hero {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    min-height: 100vh;
-    height: 100vh;
+  .hero{
     height: 100dvh;
-    width: 100vw;
-    z-index: 1;
-    background: center no-repeat url('../lib/images/Hero640.jpg');
   }
 
   .title {
@@ -31,25 +25,10 @@
     text-shadow: var(--std-text-shadow), var(--rad-text-shadow), var(--std-text-shadow);
   }
 
-  @media (--tablet-device) {
-    .hero {
-    background: center no-repeat url('../lib/images/Hero1024.jpg')
-    }
-  }
-
   @media (--desktop-device) {
-    .hero {
-        background: center no-repeat url('../lib/images/Hero1920.jpg');
-    }
 
     .title {
       text-align: right;
-    }
-  }
-
-  @media (--4k-device) {
-    .hero {
-      background: centre no-repeat url('../lib/images/Hero5724.jpg');
     }
   }
 

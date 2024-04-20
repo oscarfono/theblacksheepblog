@@ -134,6 +134,15 @@
     text-align: center;
   }
 
+  textarea {
+    height: 200px;
+  }
+
+  textarea:not([cols]) {
+    width: 100%;
+  }
+
+
   @media (--desktop-device) {
     .contact-form {
       max-width: 500px;

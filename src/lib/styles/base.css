@@ -21,11 +21,12 @@
   --redacted: 'Redacted Script', system-ui;
 
   /* font size */
-  --fs-xxl: clamp(4rem, 6vw + 2.5rem, 7rem);
-  --fs-xl: clamp(2.5rem, 5vw + 2rem, 5.5rem);
-  --fs-l: clamp(1.8rem, 3vw + 1.2rem, 2.2rem);
-  --fs-m: 1.2rem;
-  --fs-sm: 1rem;
+  --fs-xxl: clamp(3.5rem, 5vw + 1.5rem, 6rem);
+  --fs-xl: clamp(2.2rem, 4vw + 1rem, 4.5rem);
+  --fs-l: clamp(1.6rem, 3vw + 0.8rem, 2rem);
+  --fs-m: 1rem;  /* Fixed value for medium size */
+  --fs-sm: 0.75rem;  /* Relative value based on body font size */
+  --fs-xs: clamp(1rem, 2.5vw + 0.5rem, 1.1rem);  /* Extra small size */
 
   /* colour vars */
   --dark: #999;
@@ -35,6 +36,7 @@
   --light: #bbb;
   --lighter: #ccc;
   --lightest: #ddd;
+  --white: #fdfdfd;
   --accent: #ffb728;
   --error: #ff6969;
   --golden: #bda26b;

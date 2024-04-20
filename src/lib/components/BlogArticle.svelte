@@ -1,3 +1,5 @@
+<!-- /src/lib/components/BlogArticle.svelte -->
+
 <script>
   import { onMount } from 'svelte';
   import { paint } from '$lib/utils/gradient.js';
@@ -10,6 +12,7 @@
 
   onMount(async () => {
     const canvas = document.querySelector('canvas');
+    if (!canvas) return; // Check if canvas element exists
     const context = canvas.getContext('2d');
 
     requestAnimationFrame(function loop(t) {
@@ -37,22 +40,20 @@
 <article>
   <header>
     <div class="article-header-left">
-      <canvas width={200} height={200} style="mask: url({data.image}) 50% 50% no-repeat; --webkit-mask: url({data.image}) 50% 50% no-repeat;" />
+       <canvas width={150} height={150} style="mask: url({data.image}) 50% 50% no-repeat; --webkit-mask: url({data.image}) 50% 50% no-repeat;" />
     </div>
     <div class="article-header-right">
-      <h2>{data.title}</h2>
+      <h1>{data.title}</h1>
       <br>
       <p><span class="soften">Author:</span> {data.author}<p>
       <p><span class="soften">Published:</span> {data.date}</p>
       {#if data.categories.length}
         <ul>
           {#each data.categories as category}
-	    <li><a href="/blog/category/{category}"><TagTextOutline /> {category}</a></li>
+            <li><a href="/blog/category/{category}"><TagTextOutline /> {category}</a></li>
           {/each}
         </ul>
       {/if}
-
-
     </div>
   </header>
   <main>
@@ -72,25 +73,23 @@
 
 <style lang="scss">
   article {
-    width: 80vw;
-    margin-top: 3em;
-    margin-inline: auto;
-    padding: 2em;
-    background-color: var(--soften);
-    box-shadow: inset 1em 1em  rgba(221, 221, 221, 0.0333);
+    margin: 3em auto;
+    padding: 1em 2em;
+    overflow: hidden;
 
     header {
       display: flex;
       align-items: center;
-      margin: 3.333em 2em 0 -2em;
-      padding: 3.333em;
-      background: var(--darker);
+      margin: 0 -1.333em 0;
+      padding: 6em 3.333em;
 
       .article-header-left {
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
         flex-shrink: 0;
         margin-right: 1em;
+        background: var(--make-metal);
+        border-radius: 100%;
 
         canvas {
           width: 100%;
@@ -108,8 +107,9 @@
         padding-left: 1em;
       }
 
-      h2 {
-        margin-bottom: 1em;
+      h1 {
+        flex-grow: 1;
+        font-size: var(--fs-l);
       }
 
       ul {
@@ -129,7 +129,8 @@
     }
 
     main {
-      padding: 10em 3.333em;
+      margin-top: 1em;
+      padding: 3.333em 3.333em 10em;
 
       p {
         margin-bottom: 2em;

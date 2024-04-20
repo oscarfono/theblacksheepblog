@@ -3,16 +3,29 @@
  </script>
 
 <svelte:head>
-  <title>Contact | The Black Sheep</title>
+  <title>Contact | The Black Sheep Blog</title>
   <meta name="description" content="Contact The Black Sheep" />
 </svelte:head>
 
-<h1 class="title">Contact</h1>
-
-<section>
+<section class="wrapper grid">
+  <header>
+    <h1 class="title">Contact</h1>
+  </header>
+<main>
   <svelte:component this={ContactForm} />
+</main>
 </section>
 
 <style lang="scss">
+  .grid {
+    grid-template-columns: 1fr 2fr 1fr;
 
+    > header {
+      grid-column: 1 /-1;
+    }
+
+    > main {
+      grid-column: 2;
+    }
+  }
 </style>

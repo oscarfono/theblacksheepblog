@@ -9,10 +9,18 @@ export const csr = dev;
 export const prerender = true;
 
 export const load = async ({ fetch }) => {
-  const response = await fetch(`/api/posts`);
-  const posts = await response.json();
+  try {
+    const response = await fetch(`/api/posts`);
+    const posts = await response.json();
+    const categories = posts.flatMap(post => post.meta?.category || []);
+    const uniqueCategories = Array.from(new Set(categories)); // Convert Set to array
 
-  return {
-    posts
-  };
+    return {
+      posts,
+      categories: uniqueCategories, // Pass categories alongside posts
+    };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    throw error; // Rethrow the error to propagate it to the caller
+  }
 };

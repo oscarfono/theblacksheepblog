@@ -1,41 +1,41 @@
+<!-- /src/routes/blog/+page.svelte -->
+
 <script>
-  export let data;
+  import BlogCategories from "$lib/components/BlogCategories.svelte";
+  import BlogIndex from "$lib/components/BlogIndex.svelte";
 </script>
 
 <svelte:head>
-  <title>Recent Posts | The Black Sheep</title>
+  <title>Recent Posts | The Black Sheep Blog</title>
   <meta name="description" content="Bleatings and musings from The Black Sheep" />
 </svelte:head>
 
-<h1 class="title">Bleatings</h1>
-<section id="recent-posts">
-  <ol>
-    {#each data.posts as post}
-      <a href={post.path}>
-        <li>
-          <h2>{post.meta.title} - {post.meta.date}</h2>
-        </li>
-      </a>
-    {/each}
-  </ol>
+<section class="wrapper grid">
 
+    <h1 class="title">Bleatings</h1>
+
+  <div class="article-header-left">
+    <BlogCategories />
+  </div>
+  <div class="article-header-right">
+    <BlogIndex />
+  </div>
 </section>
 
 <style lang="scss">
+  .grid {
+    grid-template-columns:  1fr 1fr 1fr;
 
-  section {
-    max-width: 100%;
-    padding: 0;
-  }
+    > h1 {
+      grid-column: 1 / -1;
+    }
 
-  ol {
-    margin-top: 3.333em;
-    list-style-type: none;
-    margin-inline: auto;
-    text-align: center;
+    .article-header-left {
+      grid-column: 1;
+    }
 
-    li {
-      padding: 1em;
+    .article-header-right {
+      grid-column: 2 / -1;
     }
   }
 </style>
