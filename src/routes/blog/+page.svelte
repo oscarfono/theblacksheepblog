@@ -3,6 +3,13 @@
 <script>
   import BlogCategories from "$lib/components/BlogCategories.svelte";
   import BlogIndex from "$lib/components/BlogIndex.svelte";
+  import { writable } from 'svelte/store';
+
+  const selectedCategory = writable(null);
+
+  function handleCategorySelected(event) {
+    selectedCategory.set(event.detail.category);
+  }
 </script>
 
 <svelte:head>
@@ -11,20 +18,19 @@
 </svelte:head>
 
 <section class="wrapper grid">
-
-    <h1 class="title">Bleatings</h1>
+  <h1 class="title">Bleatings</h1>
 
   <div class="article-header-left">
-    <BlogCategories />
+    <BlogCategories on:categorySelected={handleCategorySelected} />
   </div>
   <div class="article-header-right">
-    <BlogIndex />
+    <BlogIndex {selectedCategory} />
   </div>
 </section>
 
 <style lang="scss">
   .grid {
-    grid-template-columns:  1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 
     > h1 {
       grid-column: 1 / -1;

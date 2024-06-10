@@ -1,5 +1,5 @@
 ---
-title: Carniovore is King!
+title: Carnivore is King!
 author: Cooper Oscarfono
 date: '2024-04-29'
 categories:
@@ -8,7 +8,7 @@ categories:
 - "health"
 - "nutrition"
 
-image: '/content-images/meat.svg'
-alt: 'meaty crown'
+image: '/content-images/beef.svg'
+alt: 'beef cuts'
 published: true
 ---

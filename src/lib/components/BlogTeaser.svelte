@@ -1,83 +1,50 @@
+<!-- /src/lib/components/BlogTeaser.svelte -->
+
 <script>
   import { onMount } from 'svelte';
-  import { json } from '@sveltejs/kit'; // Import json function from SvelteKit
   import { paint } from '$lib/utils/gradient.js';
 
-  let posts = [];
+  export let post;
 
-  // Function to fetch published posts
-  async function fetchPosts() {
-    try {
-      const response = await fetch('/api/posts'); // Fetch posts from your API endpoint
-      const allPosts = await response.json(); // Parse the JSON response
+  function paintImage() {
+    const canvas = document.getElementById(`canvas-${post.id}`);
+    if (!canvas) return;
+    const context = canvas.getContext('2d');
 
-      // Filter published posts
-      posts = allPosts
-        .filter(post => post.meta.published) // Filter published posts
-
-    } catch (error) {
-      console.error('Error fetching posts:', error);
-    }
-  }
-
-  // Function to paint images onto canvas elements
-  function paintImages() {
-    posts.forEach((post, index) => {
-      const canvas = document.getElementById(`canvas-${index}`);
-      if (!canvas) return; // Check if canvas element exists
-      const context = canvas.getContext('2d');
-
-      requestAnimationFrame(function loop(t) {
-        requestAnimationFrame(loop);
-        paint(context, t);
-      });
+    requestAnimationFrame(function loop(t) {
+      requestAnimationFrame(loop);
+      paint(context, t);
     });
   }
 
-  // Fetch posts and paint images when the component is mounted
   onMount(() => {
-    fetchPosts();
-    paintImages();
+    paintImage(); // Ensure each canvas gets painted
   });
 </script>
 
-{#if posts.length > 0}
-  <ul>
-    {#each posts as post, index}
-      <li>
-        <a href="{post.path}">
-          <article>
-            <header class="grid">
-              <div class="article-header-left">
-                <div class="badge">
-                  <canvas
-                    id={`canvas-${index}`}
-                    width={150}
-                    height={150}
-                    style="mask: url('{post.meta.image}') 50% 50% no-repeat; --webkit-mask: url('{post.meta.image}') 50% 50% no-repeat;"
-                    />
-                </div>
-              </div>
-              <div class="article-header-right">
-                <h2>{post.meta.title}</h2>
-                <p>{post.meta.date}</p>
-                <button>Read more...</button>
-              </div>
-            </header>
-          </article>
-        </a>
-      </li>
-    {/each}
-  </ul>
-{:else}
-  <p>No posts found.</p>
-{/if}
+<a href="{post.path}">
+  <article>
+    <header class="grid">
+      <div class="article-header-left">
+        <div class="badge">
+          <canvas
+            id={`canvas-${post.id}`}
+            width={150}
+            height={150}
+            style="mask: url('{post.meta.image}') 50% 50% no-repeat; --webkit-mask: url('{post.meta.image}') 50% 50% no-repeat;"
+          />
+        </div>
+      </div>
+      <div class="article-header-right">
+        <h2>{post.meta.title}</h2>
+        <p>{post.meta.date}</p>
+        <button>Read more...</button>
+      </div>
+    </header>
+  </article>
+</a>
 
 <style lang="scss">
-
-  ul {
-    list-style-type: none;
-  }
 
   article {
     position: relative;
@@ -113,7 +80,6 @@
           text-align: center;
           box-shadow: none;
         }
-
       }
     }
   }

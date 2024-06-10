@@ -11,7 +11,8 @@
   <header>
     <h1 class="title">Contact</h1>
   </header>
-<main>
+  <main>
+    <p>In addition to my social links, located at the bottom of the page, you can contact me via the form below.</p>
   <svelte:component this={ContactForm} />
 </main>
 </section>

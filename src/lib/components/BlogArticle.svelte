@@ -1,5 +1,4 @@
 <!-- /src/lib/components/BlogArticle.svelte -->
-
 <script>
   import { onMount } from 'svelte';
   import { paint } from '$lib/utils/gradient.js';
@@ -9,10 +8,11 @@
   export let data;
 
   let posts = [];
+  let currentIndex, previousIndex, nextIndex, previousArticle, nextArticle;
 
   onMount(async () => {
     const canvas = document.querySelector('canvas');
-    if (!canvas) return; // Check if canvas element exists
+    if (!canvas) return;
     const context = canvas.getContext('2d');
 
     requestAnimationFrame(function loop(t) {
@@ -20,21 +20,20 @@
       paint(context, t);
     });
 
-    // Fetch all posts from the API
     const response = await fetchMarkdownPosts();
     if (response && response.ok) {
       posts = await response.json();
+      updateArticleIndices();
     }
   });
 
-  // Find the current article in the list of posts
-  let currentIndex = posts.findIndex(post => post.id === data.id);
-
-  // Find the previous and next articles
-  let previousIndex = currentIndex - 1;
-  let nextIndex = currentIndex + 1;
-  let previousArticle = posts[previousIndex];
-  let nextArticle = posts[nextIndex];
+  function updateArticleIndices() {
+    currentIndex = posts.findIndex(post => post.id === data.id);
+    previousIndex = currentIndex - 1;
+    nextIndex = currentIndex + 1;
+    previousArticle = posts[previousIndex];
+    nextArticle = posts[nextIndex];
+  }
 </script>
 
 <article>
@@ -45,7 +44,7 @@
     <div class="article-header-right">
       <h1>{data.title}</h1>
       <br>
-      <p><span class="soften">Author:</span> {data.author}<p>
+      <p><span class="soften">Author:</span> {data.author}</p>
       <p><span class="soften">Published:</span> {data.date}</p>
       {#if data.categories.length}
         <ul>
@@ -147,7 +146,6 @@
       }
     }
   }
-
 
   @media --tablet-device {
   }
